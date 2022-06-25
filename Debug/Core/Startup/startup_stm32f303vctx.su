@@ -1,0 +1,7 @@
+../Core/Startup/startup_stm32f303vctx.c:238:6:NMI_Handler	0	static,ignoring_inline_asm
+../Core/Startup/startup_stm32f303vctx.c:251:6:MemManage_Handler	0	static,ignoring_inline_asm
+../Core/Startup/startup_stm32f303vctx.c:264:6:HardFault_Handler	0	static,ignoring_inline_asm
+../Core/Startup/startup_stm32f303vctx.c:277:6:BusFault_Handler	0	static,ignoring_inline_asm
+../Core/Startup/startup_stm32f303vctx.c:290:6:UsageFault_Handler	0	static,ignoring_inline_asm
+../Core/Startup/startup_stm32f303vctx.c:303:6:Default_Handler	0	static,ignoring_inline_asm
+../Core/Startup/startup_stm32f303vctx.c:201:6:Reset_Handler	8	static
