@@ -1,0 +1,4 @@
+../MIROS/miros.c:8:6:osInit	0	static
+../MIROS/miros.c:14:6:osSched	0	static
+../MIROS/miros.c:20:6:osThreadStart	4	static
+../MIROS/miros.c:58:6:PendSV_Handler	0	static,ignoring_inline_asm

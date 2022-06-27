@@ -1,6 +1,6 @@
-../Core/Src/board_support.c:10:29:assert_failed	0	static,ignoring_inline_asm
-../Core/Src/board_support.c:16:6:BS_init	0	static,ignoring_inline_asm
-../Core/Src/board_support.c:26:6:BS_gpioToggle	0	static
-../Core/Src/board_support.c:33:6:SysTick_Handler	0	static
-../Core/Src/board_support.c:38:10:tickCtr_internal	0	static,ignoring_inline_asm
-../Core/Src/board_support.c:49:6:BS_delay	16	static
+../Core/Src/board_support.c:13:29:assert_failed	0	static,ignoring_inline_asm
+../Core/Src/board_support.c:19:6:BS_init	0	static,ignoring_inline_asm
+../Core/Src/board_support.c:32:6:BS_gpioToggle	0	static
+../Core/Src/board_support.c:39:6:SysTick_Handler	8	static,ignoring_inline_asm
+../Core/Src/board_support.c:48:10:tickCtr_internal	0	static,ignoring_inline_asm
+../Core/Src/board_support.c:59:6:BS_delay	16	static

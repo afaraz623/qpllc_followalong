@@ -23,4 +23,5 @@ C_DEPS :=
 SUBDIRS := \
 Core/Src \
 Core/Startup \
+MIROS \
 

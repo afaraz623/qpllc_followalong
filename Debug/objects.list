@@ -2,3 +2,4 @@
 "./Core/Src/main.o"
 "./Core/Src/system_stm32f3xx.o"
 "./Core/Startup/startup_stm32f303vctx.o"
+"./MIROS/miros.o"

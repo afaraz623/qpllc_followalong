@@ -5,29 +5,23 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Core/Src/board_support.c \
-../Core/Src/main.c \
-../Core/Src/system_stm32f3xx.c 
+../MIROS/miros.c 
 
 OBJS += \
-./Core/Src/board_support.o \
-./Core/Src/main.o \
-./Core/Src/system_stm32f3xx.o 
+./MIROS/miros.o 
 
 C_DEPS += \
-./Core/Src/board_support.d \
-./Core/Src/main.d \
-./Core/Src/system_stm32f3xx.d 
+./MIROS/miros.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
-Core/Src/%.o Core/Src/%.su: ../Core/Src/%.c Core/Src/subdir.mk
+MIROS/%.o MIROS/%.su: ../MIROS/%.c MIROS/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F303xC -c -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -I../MIROS/ -Og -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfloat-abi=soft -mthumb -o "$@"
 
-clean: clean-Core-2f-Src
+clean: clean-MIROS
 
-clean-Core-2f-Src:
-	-$(RM) ./Core/Src/board_support.d ./Core/Src/board_support.o ./Core/Src/board_support.su ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/system_stm32f3xx.d ./Core/Src/system_stm32f3xx.o ./Core/Src/system_stm32f3xx.su
+clean-MIROS:
+	-$(RM) ./MIROS/miros.d ./MIROS/miros.o ./MIROS/miros.su
 
-.PHONY: clean-Core-2f-Src
+.PHONY: clean-MIROS
 

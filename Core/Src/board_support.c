@@ -1,6 +1,9 @@
 /* Board support source file consisting of board specific peripheral initialization & other functional definitions */
 
+#include <stdint.h>
+#include <stm32f3xx.h>
 #include <board_support.h>
+#include <miros.h>
 
 #define TICKS_PER_MS        1000U
 #define BS_TO_BR_OFFSET     16U
@@ -15,11 +18,14 @@ __attribute__((naked)) void assert_failed (char const *file, int line) {
 /* initial peripheral setup */
 void BS_init(void)
 {
-    // gpioe on and set to gp output
+    // gpioe on and set pins to gp output
     RCC->AHBENR |= RCC_AHBENR_GPIOEEN;
-	GPIOE->MODER |= GPIO_MODER_MODER8_0;
+
+	GPIOE->MODER |= GPIO_MODER_MODER8_0 | GPIO_MODER_MODER9_0;
 	
-	SysTick_Config(SystemCoreClock / TICKS_PER_MS);
+    SysTick_Config(SystemCoreClock / TICKS_PER_MS); 
+
+    NVIC_SetPriority(SysTick_IRQn, 0U); // set systick priority to the lowest
 	__enable_irq();
 }
 
@@ -33,6 +39,10 @@ void BS_gpioToggle(GPIO_TypeDef *gpiox, uint32_t gpio_pin)
 void SysTick_Handler()
 {
     ++l_tickctr;
+
+    __disable_irq();
+    osSched(); // crtical section
+    __enable_irq();
 }
 
 uint32_t tickCtr_internal(void)

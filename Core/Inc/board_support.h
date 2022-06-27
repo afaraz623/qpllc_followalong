@@ -1,8 +1,8 @@
 #ifndef __BOARD_SUPPORT_H__
 #define __BOARD_SUPPORT_H__
 
-#include <stdint.h>
-#include <stm32f3xx.h>
+#define LED_BLUE GPIO_BSRR_BS_8
+#define LED_RED GPIO_BSRR_BS_9
 
 void BS_init(void);
 

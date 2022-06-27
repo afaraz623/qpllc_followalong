@@ -237,7 +237,7 @@ void Reset_Handler(void)
 __attribute__((naked)) void NMI_Handler(void);
 void NMI_Handler(void)
 {
-	__asm volatile 
+	__asm volatile
 	(
 	"ldr r0,=str_nmi\n\t"
 	"mov r1,#1\n\t"
@@ -250,7 +250,7 @@ void NMI_Handler(void)
 __attribute__((naked)) void MemManage_Handler(void);
 void MemManage_Handler(void)
 {
-    __asm volatile 
+    __asm volatile
 	(
     "ldr r0,=str_mem\n\t"
     "mov r1,#1\n\t"
@@ -263,7 +263,7 @@ void MemManage_Handler(void)
 __attribute__((naked)) void HardFault_Handler(void);
 void HardFault_Handler(void)
 {
-	__asm volatile 
+	__asm volatile
 	(
 	"	ldr r0,=str_hrd\n\t"
 	"	mov r1,#1\n\t"
@@ -276,7 +276,7 @@ void HardFault_Handler(void)
 __attribute__((naked)) void BusFault_Handler(void);
 void BusFault_Handler(void)
 {
-	__asm volatile 
+	__asm volatile
 	(
 	"ldr r0,=str_bus\n\t"
 	"mov r1,#1\n\t"
@@ -289,7 +289,7 @@ void BusFault_Handler(void)
 __attribute__((naked)) void UsageFault_Handler(void);
 void UsageFault_Handler(void)
 {
-	__asm volatile 
+	__asm volatile
 	(
 	"ldr r0,=str_usage\n\t"
 	"mov r1,#1\n\t"
@@ -302,7 +302,7 @@ void UsageFault_Handler(void)
 __attribute__((naked)) void Default_Handler(void);
 void Default_Handler(void)
 {
-	__asm volatile 
+	__asm volatile
 	(
 	"ldr r0,=str_dflt\n\t"
 	"mov r1,#1\n\t"
